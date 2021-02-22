@@ -1,0 +1,27 @@
+<div *ngIf="pokemon" fxLayout="row">
+  <img src="{{ pokemon.sprites.front_default }}" />
+  <mat-card class="detail">
+    <!-- play with flex to fix spacing -->
+    <div>
+      <mat-card-header>
+        <mat-card-title class="text"
+          >{{ pokemon.name | uppercase }} DETAILS</mat-card-title>
+        <!-- <img mat-card-image src="{{pokemon.sprites.front_default}}"/> -->
+      </mat-card-header>
+    </div>
+    <mat-card-content>
+      <mat-list>
+        <div mat-subheader>Basics</div>
+        <mat-list-item>ID: {{ pokemon.id }}</mat-list-item>
+        <mat-list-item>Height: {{ pokemon.height }}</mat-list-item>
+        <mat-list-item>Weight: {{ pokemon.weight }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Abilities</div>
+        <mat-list-item *ngFor="let ability of pokemon.abilities">
+          <!-- <mat-icon>menu</mat-icon> -->
+          <div mat-line>{{ ability.ability.name | uppercase }}</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

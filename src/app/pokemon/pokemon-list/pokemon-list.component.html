@@ -1,0 +1,25 @@
+<div class="main">
+  <h1>Generation 4 Pokemon</h1>
+  <h2>Choose Your Pokemon</h2>
+
+<mat-grid-list cols="5" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let pokemon of allPokemon">
+    <button mat-raised-button color="warn" routerLink="/detail/{{pokemon.name}}">{{pokemon.name | uppercase}}</button>
+       <!-- <img src="{{pokemon.sprites.front_default}}"> -->
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- Mat Form Field with a drop down select box to choose pokemon -->
+<!-- <mat-form-field>
+  <mat-label>Pokemon</mat-label>
+  <mat-select [formControl]="pokemonGroup">
+      <mat-option *ngFor="let pokemon of allPokemon"
+      routerLink="/detail/{{pokemon.name}}">
+        {{pokemon.name | uppercase}}
+      </mat-option>
+  </mat-select>
+</mat-form-field> -->
+</div>
+
